@@ -27,6 +27,10 @@ public class PickaxeController : CloseWeaponController
                 if (CheckObject())
                 {
                     //충돌했음
+                    if(hitinfo.transform.tag == "Rock")
+                    {
+                        hitinfo.transform.GetComponent<Rock>().Mining();
+                    }
                     isSwing = false;
                     Debug.Log(hitinfo.transform.name); //충돌 했으면 이름을 가져옴
                 }
